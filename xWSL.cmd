@@ -13,7 +13,7 @@ REM ## Enable WSL if needed
 PowerShell.exe -Command "$WSL = Get-WindowsOptionalFeature -Online -FeatureName 'Microsoft-Windows-Subsystem-Linux' ; if ($WSL.State -eq 'Disabled') {Enable-WindowsOptionalFeature -FeatureName $WSL.FeatureName -Online}"
 
 REM ## Install Kali from AppStore if needed
-PowerShell.exe -Command "wsl -d kali-linux-core -e 'uname' > $env:TEMP\DistroTestAlive.TMP ; $alive = Get-Content $env:TEMP\DistroTestAlive.TMP ; IF ($Alive -ne 'Linux') { Start-BitsTransfer https://aka.ms/wsl-kali-linux-new -Destination $env:TEMP\Kali.AppX ; WSL.EXE --set-default-version 1 > $null ; Add-AppxPackage $env:TEMP\Kali.AppX ; Write-Host ; Write-Host 'NOTE: Open the "Kali Linux" app from your Start Menu.' ; Write-Host 'When Kali initialization completes' ; PAUSE ; Write-Host }"
+PowerShell.exe -Command "wsl -d kali-linux-default -e 'uname' > $env:TEMP\DistroTestAlive.TMP ; $alive = Get-Content $env:TEMP\DistroTestAlive.TMP ; IF ($Alive -ne 'Linux') { Start-BitsTransfer https://aka.ms/wsl-kali-linux-new -Destination $env:TEMP\Kali.AppX ; WSL.EXE --set-default-version 1 > $null ; Add-AppxPackage $env:TEMP\Kali.AppX ; Write-Host ; Write-Host 'NOTE: Open the "Kali Linux" app from your Start Menu.' ; Write-Host 'When Kali initialization completes' ; PAUSE ; Write-Host }"
 
 REM ## Acquire LxRunOffline
 cp -r D:\a\xWSL\xWSL\* %TEMP% >NUL 2>&1
