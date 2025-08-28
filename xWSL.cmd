@@ -2,7 +2,7 @@
 IF %ERRORLEVEL% == 0 (ECHO Administrator check passed...) ELSE (ECHO You need to run this command with administrative rights.  Is User Account Control enabled? && pause && goto ENDSCRIPT)
 COLOR 1F
 SET GITORG=Certve
-SET GITPRJ=xWSL
+SET GITPRJ=kalix12
 SET BRANCH=main
 SET BASE=https://github.com/%GITORG%/%GITPRJ%/raw/%BRANCH%
 SET RUNSTART=%date% @ %time:~0,5%
